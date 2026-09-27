@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>fragments</title></head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark mb-4" style="background-color:#8e6bb0;">
+    <div class="container">
+        <a class="navbar-brand fw-bold" th:href="@{/publicacoes}">Círculo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/publicacoes}">Publicações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/publicacoes/nova}">Nova publicação</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/sobre}">Sobre</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== ALERTAS (sucesso / erro) ===================== -->
+<div th:fragment="alerts" class="container">
+    <div th:if="${mensagemSucesso}" class="alert alert-success alert-dismissible fade show" role="alert">
+        <span th:text="${mensagemSucesso}">Mensagem de sucesso</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    <div th:if="${mensagemErro}" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <span th:text="${mensagemErro}">Mensagem de erro</span>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+</div>
+
+<!-- ===================== RODAPÉ ===================== -->
+<footer th:fragment="footer" class="mt-5 py-4 border-top text-center text-muted small">
+    <div class="container">
+        <p class="mb-1">
+            Esta é uma aplicação acadêmica de acolhimento e compartilhamento de informações.
+            O conteúdo publicado não substitui avaliação, diagnóstico ou acompanhamento realizado
+            por profissionais de saúde.
+        </p>
+        <p class="mb-0">Em situações urgentes, procure os serviços públicos de emergência da sua região.</p>
+        <p class="mt-2 mb-0">Círculo &middot; Projeto acadêmico &middot; UEL</p>
+    </div>
+</footer>
+
+</body>
+</html>
