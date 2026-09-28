@@ -1,4 +1,4 @@
-package br.com.circulo.preview;
+package br.com.circulo;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
